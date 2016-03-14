@@ -9,20 +9,24 @@ import os
 import subprocess
 
 #CONSTANTS
+#Connection to email server
 IMAP_SERVER='imap.gmail.com'
 IMAP_PORT=993
 #Email user
 USR='user@gmail.com'
 PASS='password'
 #Folder within IMAP that is used to search latest email
+#It is necessary to have E15 emails in own folder (via email fiter) 
+#as we search latest email there
 IMAP_FOLDER='E15'
 #Dropbox-Uploader command (see https://github.com/andreafabrizi/Dropbox-Uploader)
 DBOX_UP='/usr/bin/local/dbox_up.sh'
-#Downloaded temporary file from link
+#Downloaded temporary file from link to this location
 TMP='/tmp/'
-#Path within folder accessible by Dropbox Uploader script
+#Path within remote folder accessible by Dropbox Uploader script
 DBOX_PATH='e15/'
-#HELPERS
+
+#HELPER methods
 
 def dlfile(loc, url):
     path = loc+os.path.basename(url)
